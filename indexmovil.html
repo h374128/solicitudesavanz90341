@@ -66,6 +66,18 @@
     box-shadow: none;
 }
 
+/* Efecto de parpadeo */
+@keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+
+    .parpadeo {
+        animation: blink 0.3s ease-in-out 3; /* Parpadea 3 veces */
+
+
+    }
     .pop {
 
         height: 35px;
@@ -140,7 +152,33 @@
             </form>
         </div>
     </div>
-
+    <script>
+        function validarFormulario() {
+            let usuario = document.getElementById("usuario").value;
+            let contrasena = document.getElementById("contrasena").value;
+            let mensajeError = document.getElementById("plus");
+    
+            // Expresión regular para validar que la contraseña tenga al menos una letra y un número
+            let regexContrasena = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/;
+    
+            // Validaciones
+            if (usuario.includes(" ") || contrasena.includes(" ") || !regexContrasena.test(contrasena)) {
+                mensajeError.style.display = "block"; // Muestra el mensaje de error
+    
+                // Inicia el parpadeo
+                mensajeError.classList.add("parpadeo");
+                setTimeout(() => {
+                    mensajeError.classList.remove("parpadeo");
+                }, 1500); // Detiene el efecto después de 1.5 segundos
+    
+                return false; // Evita que el formulario se envíe
+            }
+    
+            return true; // Permite el envío del formulario si todo está correcto
+        }
+    </script>
+    
+    
     <script>
         function validarFormulario() {
             let usuario = document.getElementById("usuario").value;
